@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-${'' /* font-family: 'Montserrat'*/}
+${''}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-${'' /* font-family: 'Lato'*/}
+${''}
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
   html, body, div, span, applet, object, iframe,
