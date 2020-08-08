@@ -2,32 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 import { Flex, Box } from 'rebass'
 import { Board } from '../Board'
+import { Text } from 'components/Text'
 
-// const Content = styled.div`
-// height: 89px;
-// width: 500px;
-// background-color: #FFFFFF;
-// box-shadow: 0px 3px 6px #00000029;
-// border-radius: 10px;
-// margin: 32px;
-// `
 const LeftBoard = styled.div`
 height: 89px;
 width: 14px;
-background-color: purple;
+background-color: #851486;
 border-radius: 10px 0px 0px 10px;
 `
-
-const Title = styled.h2`
-  color: purple;
-  font-weight: bold;
-  font-size:28px;
-`
 const Description = styled.h3`
+  margin-top:5px;
   color: #736A73;
 `
 
-const BoardRegisted = ({ title }) => {
+const BoardRegisted = ({ title, subtitle }) => {
   return (
     <Board padding={false}>
       <Flex alignItems='center'>
@@ -35,8 +23,8 @@ const BoardRegisted = ({ title }) => {
           <LeftBoard />
         </Box>
         <Box>
-          <Title>12.043</Title>
-          <Description>Registered attendes</Description>
+          <Text fontsize='28px' textcolor='#851486'>{title}</Text>
+          <Description>{subtitle}</Description>
         </Box>
       </Flex>
     </Board>

@@ -5,12 +5,8 @@ import { Flex, Box } from 'rebass'
 import PropTypes from 'prop-types'
 import { Button } from 'components/Button'
 import { Board } from '../Board'
+import { Text } from 'components/Text'
 
-const SubTitle = styled.h2`
-  color: #736A73;
-  font-weight: bold;
-  font-size:16px;
-`
 const Circle = styled.span`
   height: 8px;
   width: 8px;
@@ -20,16 +16,20 @@ const Circle = styled.span`
   margin-bottom:2px;
 `
 
-const BoardEvent = ({ title, liveShow, children }) => {
+const BoardStandard = ({ title, liveShow, description, children }) => {
   return (
-    <Board>
+    <Board width='95'>
       <Flex alignItems='center'>
         {liveShow &&
           <Box mx={2}>
             <Circle liveColor='red' />
           </Box>}
         <Box>
-          <SubTitle>{title}</SubTitle>
+          <Text
+            fontfamily='Lato-Bold'
+            fontsize='16px'
+          >{title}
+          </Text>
         </Box>
         <Box mx='auto' />
         <Box>
@@ -39,18 +39,31 @@ const BoardEvent = ({ title, liveShow, children }) => {
         </Box>
       </Flex>
       <Flex>
+        <Box>
+          <Text
+            fontfamily='Lato-Regular'
+            fontsize='12px'
+            textcolor='#736A73'
+            opacity={60}
+            mt='50px'
+          >
+            {description}
+          </Text>
+        </Box>
+      </Flex>
+      <Flex>
         {children}
       </Flex>
     </Board>
   )
 }
 
-BoardEvent.propTypes = {
+BoardStandard.propTypes = {
   liveShow: PropTypes.bool
 }
 
-BoardEvent.defaultProps = {
+BoardStandard.defaultProps = {
   liveShow: true
 }
 
-export default BoardEvent
+export default BoardStandard
