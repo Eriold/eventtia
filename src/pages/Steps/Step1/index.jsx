@@ -68,7 +68,7 @@ const Step1 = () => {
             title='Live announcements'
             description='This announcement will be visible for all the attendees in the event.'
           >
-            hola
+            Textarea
           </BoardStandard>
         </Box>
       </Flex>
