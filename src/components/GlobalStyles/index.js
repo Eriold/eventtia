@@ -1,10 +1,25 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-${'' /* font-family: 'Montserrat'*/}
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
-${'' /* font-family: 'Lato'*/}
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+  @font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/fonts/Montserrat-Bold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/fonts/Montserrat-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Lato-Regular';
+    src: url('/fonts/Lato-Regular.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Lato-Bold';
+    src: url('/fonts/Lato-Bold.ttf') format('truetype');
+  }
 
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -71,8 +86,8 @@ ${'' /* font-family: 'Lato'*/}
 
   body {
     background: #F6F6FA;
-    font-family: 'Lato';
-    color: #333333;
+    font-family: 'Lato-Regular';
+    color: #736A73;
     line-height: normal;
     width: 100vw;
     line-height: 1;
@@ -86,20 +101,20 @@ ${'' /* font-family: 'Lato'*/}
   }
 
   h1 {
-    font-size: 2.188em;
-    font-family: 'Montserrat';
+    
+    font-family: 'Montserrat-Bold';
     line-height: 1.5em;
   }
 
   h2 {
-    font-size: 0.938em;
-    font-family: 'Lato';
+    font-family: 'Montserrat-Bold';
     line-height: 1.5em;
   }
 
   h3 {
-    font-size: 1.8em;
+    font-size:12px;
     font-weight: 400;
+    font-family: 'Lato-regular';
   }
 
   h4 {
