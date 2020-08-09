@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-dom'
 import { Step1, Step2, Step3, Step4 } from 'pages/Steps'
 import { Error } from 'pages/Error'
+import { Layout } from 'components/Layout'
 
 const Routes = () => {
   return (
@@ -18,8 +19,10 @@ const Routes = () => {
 
 export const App = () => {
   return (
-    <Router>
-      <Routes />
-    </Router>
+    <Layout>
+      <Router>
+        <Routes />
+      </Router>
+    </Layout>
   )
 }

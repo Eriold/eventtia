@@ -5,7 +5,7 @@ import { Text } from 'components/Text'
 
 export const LocalTime = () => {
   const newTime = new Date()
-  const hour = newTime.getHours() > 12 ? newTime.getHours() - 12 : newTime.getHours
+  const hour = newTime.getHours() > 12 ? newTime.getHours() - 12 : newTime.getHours()
   const minute = (newTime.getMinutes() < 10 ? '0' : '') + newTime.getMinutes()
   const meridiem = newTime.getHours() < 12 ? 'am' : 'pm'
   const hourLocal = `${hour}:${minute} ${meridiem}`

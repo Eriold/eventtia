@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { MenuItem } from 'components/Icon'
 import { Flex, Box } from 'rebass'
-import PropTypes from 'prop-types'
 import { Button, StandardButton } from 'components/Button'
 import { Board } from '../Board'
 import { Text, Textarea } from 'components/Text'
@@ -77,14 +76,6 @@ const BoardStandard = ({
       </Flex>
     </Board>
   )
-}
-
-BoardStandard.propTypes = {
-  liveShow: PropTypes.bool
-}
-
-BoardStandard.defaultProps = {
-  liveShow: true
 }
 
 export default BoardStandard

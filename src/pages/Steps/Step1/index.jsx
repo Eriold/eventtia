@@ -6,9 +6,10 @@ import { Text } from 'components/Text'
 import { LocalTime } from 'components/LocalTime'
 
 const Container = styled.div`
-  width: 95%;
+  width: 90%;
   height: auto;
-  margin: 32px;
+  margin: auto;
+  padding-top: 32px;
 `
 
 const Step1 = () => {
@@ -36,39 +37,54 @@ const Step1 = () => {
           </Flex>
         </Box>
         <Box mx='auto' />
-        <Box>
+        <Box mr='32px'>
           <LocalTime />
         </Box>
       </Flex>
       <Flex>
-        <Box width={1 / 4}>
-          <BoardRegisted
-            title='12.043'
-            subtitle='Registered attendes'
-          />
-        </Box>
-        <Box width={1 / 4}>
-          <BoardOnline
-            title='6.320'
-            subtitle='Attendance online'
-            percent='56%'
-            subtitlepercent='Attendance'
-          />
-        </Box>
-      </Flex>
-      <Flex>
         <Box width={1 / 2}>
-          <BoardStandard liveShow={false} title='Active attendees' />
+          <Flex>
+            <Box width={1 / 2}>
+              <BoardRegisted
+                title='12.043'
+                subtitle='Registered attendes'
+              />
+            </Box>
+            <Box width={1 / 2}>
+              <BoardOnline
+                title='6.320'
+                subtitle='Attendance online'
+                percent='56%'
+                subtitlepercent='Attendance'
+              />
+            </Box>
+          </Flex>
+          <Flex>
+            <Box width={1}>
+              <BoardStandard title='Active attendees' />
+            </Box>
+          </Flex>
+          <Flex>
+            <Box width={1}>
+              <BoardStandard
+                title='Live announcements'
+                description='This announcement will be visible for all the attendees in the event.'
+                buttonname='Publish'
+              />
+            </Box>
+          </Flex>
         </Box>
-      </Flex>
-      <Flex>
         <Box width={1 / 2}>
-          <BoardStandard
-            liveShow={false}
-            title='Live announcements'
-            description='This announcement will be visible for all the attendees in the event.'
-            buttonname='Publish'
-          />
+          <Flex>
+            <Box width={1}>
+              <BoardStandard liveShow title='Live activities' />
+            </Box>
+          </Flex>
+          <Flex>
+            <Box width={1}>
+              <BoardStandard title='Networking' />
+            </Box>
+          </Flex>
         </Box>
       </Flex>
     </Container>
