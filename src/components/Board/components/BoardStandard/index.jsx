@@ -3,9 +3,9 @@ import styled from 'styled-components'
 import { MenuItem } from 'components/Icon'
 import { Flex, Box } from 'rebass'
 import PropTypes from 'prop-types'
-import { Button } from 'components/Button'
+import { Button, StandardButton } from 'components/Button'
 import { Board } from '../Board'
-import { Text } from 'components/Text'
+import { Text, Textarea } from 'components/Text'
 
 const Circle = styled.span`
   height: 8px;
@@ -16,7 +16,13 @@ const Circle = styled.span`
   margin-bottom:2px;
 `
 
-const BoardStandard = ({ title, liveShow, description, children }) => {
+const BoardStandard = ({
+  title,
+  liveShow,
+  description,
+  buttonname,
+  children
+}) => {
   return (
     <Board width='95'>
       <Flex alignItems='center'>
@@ -38,19 +44,34 @@ const BoardStandard = ({ title, liveShow, description, children }) => {
           </Button>
         </Box>
       </Flex>
-      <Flex>
+      {description &&
+        <Flex>
+          <Box>
+            <Text
+              fontfamily='Lato-Regular'
+              fontsize='12px'
+              textcolor='#736A73'
+              opacity={60}
+              mt='50px'
+            >
+              {description}
+            </Text>
+          </Box>
+        </Flex>}
+      {buttonname &&
         <Box>
-          <Text
-            fontfamily='Lato-Regular'
-            fontsize='12px'
-            textcolor='#736A73'
-            opacity={60}
-            mt='50px'
-          >
-            {description}
-          </Text>
-        </Box>
-      </Flex>
+          <Flex>
+            <Textarea />
+          </Flex>
+          <Flex>
+            <Box mx='auto' />
+            <Box>
+              <StandardButton>
+                {buttonname}
+              </StandardButton>
+            </Box>
+          </Flex>
+        </Box>}
       <Flex>
         {children}
       </Flex>
