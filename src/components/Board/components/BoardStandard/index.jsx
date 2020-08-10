@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { MenuItem } from 'components/Icon'
-import { Flex, Box } from 'rebass'
+import { MenuItem, ArrowRight } from 'components/Icon'
+import { Flex, Box, Link } from 'rebass'
 import { Button, StandardButton } from 'components/Button'
 import { Board } from '../Board'
 import { Text, Textarea } from 'components/Text'
+import { NavLink } from 'react-router-dom'
 
 const Circle = styled.span`
   height: 8px;
@@ -20,7 +21,9 @@ const BoardStandard = ({
   liveShow,
   description,
   buttonname,
-  children
+  children,
+  url,
+  urlname
 }) => {
   return (
     <Board width='95'>
@@ -74,6 +77,23 @@ const BoardStandard = ({
       <Flex>
         {children}
       </Flex>
+      {urlname &&
+        <Flex my='5px'>
+          <Box mx='auto' />
+          <Box>
+            <Link as={NavLink} to={url}>
+              <Button>
+                <Text
+                  textcolor='#611862'
+                  fontfamily='Lato-Regular'
+                  fontsize='16px'
+                >
+                  {urlname} <ArrowRight size='10px' />
+                </Text>
+              </Button>
+            </Link>
+          </Box>
+        </Flex>}
     </Board>
   )
 }

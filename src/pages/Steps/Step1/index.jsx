@@ -1,46 +1,13 @@
 import React from 'react'
 import { Flex, Box } from 'rebass'
 import { BoardRegisted, BoardOnline, BoardStandard } from 'components/Board'
-import styled from 'styled-components'
-import { Text } from 'components/Text'
-import { LocalTime } from 'components/LocalTime'
-
-const Container = styled.div`
-  width: 90%;
-  height: auto;
-  margin: auto;
-  padding-top: 32px;
-`
+import { Header } from 'components/Header'
+import { StepContainer as Container } from 'components/Container'
 
 const Step1 = () => {
   return (
     <Container>
-      <Flex alignItems='center' mb='40px' justifyContent='center'>
-        <Box>
-          <Flex>
-            <Text
-              fontsize='24px'
-              textcolor='#851486'
-            >
-            Live Event Analytics
-            </Text>
-          </Flex>
-          <Flex>
-            <Text
-              fontsize='14px'
-              textcolor='#555555'
-              fontfamily='Lato-Regular'
-              mt='5px'
-            >
-            Ipsum Event 2020
-            </Text>
-          </Flex>
-        </Box>
-        <Box mx='auto' />
-        <Box mr='32px'>
-          <LocalTime />
-        </Box>
-      </Flex>
+      <Header />
       <Flex>
         <Box width={1 / 2}>
           <Flex>
@@ -76,13 +43,17 @@ const Step1 = () => {
         </Box>
         <Box width={1 / 2}>
           <Flex>
-            <Box width={1}>
+            <Box width='100%'>
               <BoardStandard liveShow title='Live activities' />
             </Box>
           </Flex>
           <Flex>
             <Box width={1}>
-              <BoardStandard title='Networking' />
+              <BoardStandard
+                title='Networking'
+                urlname='View meetings live now'
+                url='/step2'
+              />
             </Box>
           </Flex>
         </Box>

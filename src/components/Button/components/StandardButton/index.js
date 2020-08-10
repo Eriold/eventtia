@@ -15,5 +15,8 @@ const StandardButton = styled.button`
   :focus {
     outline: none;
   }
+  :hover {
+    background-color: #1caa95;
+  }
 `
 export default StandardButton
